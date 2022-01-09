@@ -11,6 +11,6 @@ describe Boat do
     # 'to' method on obj returned from our call
     # be_a = matcher; methods that can check whether argument passed expect
     # then passing Boat class to be_a matcher; returning t/f
-    expect(Boat.new).to be_a Boat
+    expect(Boat.new).to be_a Hash
   end
 end
