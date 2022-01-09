@@ -17,5 +17,13 @@ describe Boat do
   # this will be used to determine whether a passenger is prepared to board a boat
   # the '#' indicates that allowed_aboard? is an instance method of Boat
   describe '#allowed_aboard?' do
+    it 'returns true if inventory includes a life jacket' do
+      a_boat = Boat.new
+      # array passed to instance method that should return true, stored in variable 'allowed'
+      allowed = a_boat.allowed_aboard?(['life jacket', 'sun glasses'])
+      # assertion to say returned value in allowed is true
+      # 'be' matcher; checks whether values passed to expect are same as value passed to be
+      expect(allowed).to be true
+    end
   end
 end
