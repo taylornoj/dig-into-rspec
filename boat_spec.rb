@@ -25,5 +25,11 @@ describe Boat do
       # 'be' matcher; checks whether values passed to expect are same as value passed to be
       expect(allowed).to be true
     end
+    # have to make sure that the method returns false in other cases
+    it 'returns false if inventory does not include a life jacket' do
+      a_boat = Boat.new
+      allowed = a_boat.allowed_aboard?(['swim trunks', 'flippy floppies'])
+      expect(allowed).to be false
+    end
   end
 end
