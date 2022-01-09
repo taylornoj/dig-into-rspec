@@ -13,4 +13,9 @@ describe Boat do
     # then passing Boat class to be_a matcher; returning t/f
     expect(Boat.new).to be_a Boat
   end
+  # practice test driven development
+  # this will be used to determine whether a passenger is prepared to board a boat
+  # the '#' indicates that allowed_aboard? is an instance method of Boat
+  describe '#allowed_aboard?' do
+  end
 end
