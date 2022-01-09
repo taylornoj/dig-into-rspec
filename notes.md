@@ -56,4 +56,34 @@ Part of the error message for the failing test indicates:
      # ./boat_spec.rb:22:in `block (3 levels) in <top (required)>'
 ```
 
-which means that the allowed_aboard? method hasn't been defined
+which means that the allowed_aboard? method hasn't been defined.
+
+So lets define the method:
+```javascript
+class Boat
+  def allowed_aboard?(inventory)
+  end
+end
+```
+
+But we still see failing tests:
+
+```
+.F
+
+Failures:
+
+  1) Boat#allowed_aboard? returns true if inventory includes a life jacket
+     Failure/Error: expect(allowed).to be true
+     
+       expected true
+            got nil
+     # ./boat_spec.rb:26:in `block (3 levels) in <top (required)>'
+
+Finished in 0.01615 seconds (files took 0.11416 seconds to load)
+2 examples, 1 failure
+
+Failed examples:
+
+rspec ./boat_spec.rb:20 # Boat#allowed_aboard? returns true if inventory includes a life jacket
+```
