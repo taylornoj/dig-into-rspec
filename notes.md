@@ -36,3 +36,24 @@ The part of the error with this:
 
   At the bottom of this output it lists which tests failed. In this case the test Boat should create boats failed in the file ./boat_spec.rb on line 9.
 
+-----------------------
+
+Writing test for method used to determine whether a passenger is prepared to board a boat:
+
+```javascript
+describe '#allowed_aboard?' do
+    it 'returns true if inventory includes a life jacket' do
+      a_boat = Boat.new
+      allowed = a_boat.allowed_aboard?(['life jacket', 'sun glasses'])
+      expect(allowed).to be true
+    end
+```
+
+Part of the error message for the failing test indicates:
+
+``` NoMethodError:
+       undefined method `allowed_aboard?' for #<Boat:0x0000000002064f08>
+     # ./boat_spec.rb:22:in `block (3 levels) in <top (required)>'
+```
+
+which means that the allowed_aboard? method hasn't been defined
