@@ -87,3 +87,12 @@ Failed examples:
 
 rspec ./boat_spec.rb:20 # Boat#allowed_aboard? returns true if inventory includes a life jacket
 ```
+This error message is saying that the expectation was the value in allowed would be true, but it got nil instead. We have to implement the method:
+
+```javascript
+class Boat
+  def allowed_aboard?(inventory)
+    inventory.include?('life jacket')
+  end
+end
+```
